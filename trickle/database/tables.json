@@ -1,0 +1,345 @@
+[
+  {
+    "name": "flat",
+    "fields": [
+      {
+        "name": "flat_no",
+        "type": "text",
+        "description": "Unique flat number",
+        "options": null
+      },
+      {
+        "name": "owner_name",
+        "type": "text",
+        "description": "Name of the flat owner",
+        "options": null
+      },
+      {
+        "name": "owner_phone",
+        "type": "text",
+        "description": "Phone number of the flat owner",
+        "options": null
+      },
+      {
+        "name": "tenant_name",
+        "type": "text",
+        "description": "Name of the tenant (if any)",
+        "options": null
+      },
+      {
+        "name": "tenant_phone",
+        "type": "text",
+        "description": "Phone number of the tenant (if any)",
+        "options": null
+      },
+      {
+        "name": "water_meter_serial_no",
+        "type": "text",
+        "description": "Serial number of the water meter for the flat",
+        "options": null
+      },
+      {
+        "name": "meter_type",
+        "type": "text",
+        "description": "Type of meter (FLAT or COMMON)",
+        "options": [
+          "FLAT",
+          "COMMON"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "water_reading",
+    "fields": [
+      {
+        "name": "month",
+        "type": "text",
+        "description": "Month and year of the reading (e.g., YYYY-MM)",
+        "options": null
+      },
+      {
+        "name": "flat_no",
+        "type": "text",
+        "description": "Flat number for the reading",
+        "options": null
+      },
+      {
+        "name": "previous_reading",
+        "type": "number",
+        "description": "Previous meter reading",
+        "options": null
+      },
+      {
+        "name": "current_reading",
+        "type": "number",
+        "description": "Current meter reading",
+        "options": null
+      },
+      {
+        "name": "consumed_units",
+        "type": "number",
+        "description": "Units consumed in the month",
+        "options": null
+      },
+      {
+        "name": "used_water",
+        "type": "number",
+        "description": "Used water units",
+        "options": null
+      },
+      {
+        "name": "free_water",
+        "type": "number",
+        "description": "Free water limit",
+        "options": null
+      },
+      {
+        "name": "excess_water",
+        "type": "number",
+        "description": "Excess water over free limit",
+        "options": null
+      },
+      {
+        "name": "water_charge",
+        "type": "number",
+        "description": "Charge for excess water",
+        "options": null
+      },
+      {
+        "name": "status",
+        "type": "text",
+        "description": "Status of the reading",
+        "options": [
+          "draft",
+          "published"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "expenditure",
+    "fields": [
+      {
+        "name": "month",
+        "type": "text",
+        "description": "Month of the expenditure (e.g., YYYY-MM)",
+        "options": null
+      },
+      {
+        "name": "date",
+        "type": "datetime",
+        "description": "Date of the expenditure",
+        "options": null
+      },
+      {
+        "name": "category",
+        "type": "text",
+        "description": "Category of the expenditure",
+        "options": [
+          "Watchman Salary",
+          "Electricity Bill",
+          "Lift Service",
+          "Garbage Collection",
+          "Diesel",
+          "Miscellaneous"
+        ]
+      },
+      {
+        "name": "amount",
+        "type": "number",
+        "description": "Amount spent",
+        "options": null
+      }
+    ]
+  },
+  {
+    "name": "water_tanker",
+    "fields": [
+      {
+        "name": "month",
+        "type": "text",
+        "description": "Month of the tanker delivery (e.g., YYYY-MM)",
+        "options": null
+      },
+      {
+        "name": "date",
+        "type": "datetime",
+        "description": "Date of the tanker delivery",
+        "options": null
+      },
+      {
+        "name": "liters",
+        "type": "number",
+        "description": "Number of liters delivered",
+        "options": null
+      },
+      {
+        "name": "cost",
+        "type": "number",
+        "description": "Cost of the tanker",
+        "options": null
+      }
+    ]
+  },
+  {
+    "name": "expense",
+    "fields": [
+      {
+        "name": "date",
+        "type": "datetime",
+        "description": "Date of the expense",
+        "options": null
+      },
+      {
+        "name": "category",
+        "type": "text",
+        "description": "Category of the expense (e.g. Watchman Salary, Custom)",
+        "options": null
+      },
+      {
+        "name": "amount",
+        "type": "number",
+        "description": "Amount spent",
+        "options": null
+      }
+    ]
+  },
+  {
+    "name": "monthly_summary",
+    "fields": [
+      {
+        "name": "month",
+        "type": "text",
+        "description": "Month of the summary (e.g., YYYY-MM)",
+        "options": null
+      },
+      {
+        "name": "total_expenses",
+        "type": "number",
+        "description": "Total expenses for the month",
+        "options": null
+      },
+      {
+        "name": "maintenance_per_flat",
+        "type": "number",
+        "description": "Maintenance charge calculated per flat",
+        "options": null
+      },
+      {
+        "name": "is_locked",
+        "type": "bool",
+        "description": "Whether the month is locked after publishing bills",
+        "options": null
+      },
+      {
+        "name": "water_billing_mode",
+        "type": "text",
+        "description": "Billing mode for water",
+        "options": [
+          "tanker",
+          "no_tanker"
+        ]
+      },
+      {
+        "name": "living_flats",
+        "type": "number",
+        "description": "Number of living flats",
+        "options": null
+      },
+      {
+        "name": "total_tanker_water",
+        "type": "number",
+        "description": "Total tanker water in liters",
+        "options": null
+      },
+      {
+        "name": "total_tanker_cost",
+        "type": "number",
+        "description": "Total tanker cost",
+        "options": null
+      },
+      {
+        "name": "calculated_free_water",
+        "type": "number",
+        "description": "Calculated free water per flat",
+        "options": null
+      },
+      {
+        "name": "calculated_cost_per_liter",
+        "type": "number",
+        "description": "Calculated cost per liter",
+        "options": null
+      }
+    ]
+  },
+  {
+    "name": "monthly_bill",
+    "fields": [
+      {
+        "name": "month",
+        "type": "text",
+        "description": "Billing month (e.g., YYYY-MM)",
+        "options": null
+      },
+      {
+        "name": "flat_no",
+        "type": "text",
+        "description": "Flat number",
+        "options": null
+      },
+      {
+        "name": "water_charge",
+        "type": "number",
+        "description": "Calculated water charge",
+        "options": null
+      },
+      {
+        "name": "maintenance_charge",
+        "type": "number",
+        "description": "Maintenance charge per flat",
+        "options": null
+      },
+      {
+        "name": "total_bill",
+        "type": "number",
+        "description": "Total bill amount (water + maintenance)",
+        "options": null
+      }
+    ]
+  },
+  {
+    "name": "apartment_settings",
+    "fields": [
+      {
+        "name": "free_water_per_flat",
+        "type": "number",
+        "description": "Global free water allowance per flat",
+        "options": null
+      },
+      {
+        "name": "excess_water_cost_per_liter",
+        "type": "number",
+        "description": "Cost per liter for excess water",
+        "options": null
+      }
+    ]
+  },
+  {
+    "name": "admin_settings",
+    "fields": [
+      {
+        "name": "username",
+        "type": "text",
+        "description": "Admin username",
+        "options": null
+      },
+      {
+        "name": "password_hash",
+        "type": "text",
+        "description": "Hashed password for security",
+        "options": null
+      }
+    ]
+  }
+]

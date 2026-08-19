@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Shiridi Sai Nilayam</title>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --primary-color: #0369a1;
+            --secondary-color: #e0f2fe;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+        }
+    }
+    @layer base {
+        body { background-color: var(--bg-color); color: var(--text-main); }
+    }
+    @layer components {
+        .btn-primary { @apply bg-[var(--primary-color)] text-white font-medium py-3 px-4 rounded-xl shadow-sm hover:bg-sky-800 transition-colors w-full flex justify-center items-center gap-2; }
+        .btn-secondary { @apply bg-white border border-slate-300 text-slate-700 font-medium py-3 px-4 rounded-xl shadow-sm hover:bg-slate-50 transition-colors w-full flex justify-center items-center gap-2; }
+        .card { @apply bg-[var(--card-bg)] rounded-2xl shadow-sm border border-slate-200 p-5; }
+        .input-field { @apply w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[var(--primary-color)] focus:ring-1 focus:ring-[var(--primary-color)] text-[16px]; }
+        .label-text { @apply block text-sm font-medium text-slate-700 mb-1.5; }
+    }
+    </style>
+</head>
+<body class="pb-24 bg-slate-50">
+    <div id="root"></div>
+    <script type="text/babel" src="utils/api.js"></script>
+    <script type="text/babel" src="components/SharedUI.js"></script>
+    <script type="text/babel" src="utils/seedData.js"></script>
+    <script type="text/babel" src="components/admin/WaterReadingsManager.js"></script>
+    <script type="text/babel" src="components/admin/PaymentsManager.js"></script>
+    <script type="text/babel" src="components/admin/ExpensesManager.js"></script>
+    <script type="text/babel" src="components/admin/MonthlyBillsManager.js"></script>
+    <script type="text/babel" src="admin-app.js"></script>
+</body>
+</html>
